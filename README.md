@@ -1,21 +1,8 @@
 # Rahulio
-1.0.5
-```
-//Rahulio 1.0.5 Discord Bot
-//Main method code can be found in index.js
-//Here you can find the initialization and instantiation of the bot
+1.1.1
 
-const Discord = require('discord.js');
-const cheerio = require('cheerio');
-const request = require('request');
-const client = new Discord.Client();
-const { prefix, author, version } = require('./config.json');
-const token = process.env.token;
+Click this link to add Rahulio to your server:
 
-client.once('ready', () => {
-	console.log('Rahulio ' + version + ' is online!');
-	client.user.setActivity('r$');	
-})
+https://discord.com/oauth2/authorize?client_id=708010288217063796&scope=bot
 
-client.login(token);
-```
+Enjoy!
