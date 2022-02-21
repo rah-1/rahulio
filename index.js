@@ -66,7 +66,7 @@ client.on('message', message => {
 
 			message.channel.send("React to vote!")
 			    .then(async function (message) {
-				for (let i = 0; i < numOptions; i++) {
+				for (let i = 1; i <= numOptions; i++) {
 					await message.react(emojiDict[i]);
 				}}).catch(function() {
 					message.channel.send("Lmao (this means it broke)")
