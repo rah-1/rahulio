@@ -65,11 +65,11 @@ client.on('message', message => {
 			  	}
 
 			message.channel.send("React to vote!")
-			    .then(function (message) {
+			    .then(async function (message) {
 				for (let i = 0; i < numOptions; i++) {
-					message.react(emojiDict[i]);
+					await message.react(emojiDict[i]);
 				}}).catch(function() {
-					message.channel.send("Lmao")
+					message.channel.send("Lmao (this means it broke)")
 					   });
 		
 		
@@ -83,7 +83,7 @@ client.on('message', message => {
 			const yn = [`yes`,`no`,`maybe`,`unknown`,`unlikely`,`very likely`,`doubtful`];
 			const what = [`vanilla`,`what?`,`uhh`,`unknown`,`everything is meaningless`,`nothing`];
 			const why = [`no idea`,`carnal urges`,`deformities at birth`,`the ways of life`,`she doesn't love you`,`fortune`,`lack of initative`];
-			const when = [`never`,`soon`,`when pigs fly`,`unknown`,`it's already happened`,`right now`,`in an eternity`];
+			const when = [`never`,`soon`,`when pigs fly`,`unknown`,`it's already happened`,`right now`,`in an eternity`,`inshallah`];
 			const where = [`in hell`,`up your ass and to the left`,`nowhere`,`somewhere`,`unknown`,`New York`];
 			const who = [`you`,`your mother`,`your neighbor`,`unknown`,`ion know`,`a nobody`,`not you`];
 			const how = [`no idea`,`somehow`,`raw`,`it's impossible`,`with love`,`gotta believe`];
