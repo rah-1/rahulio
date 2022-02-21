@@ -64,14 +64,16 @@ client.on('message', message => {
 				message.channel.send(emojiDict[i] + ` ` + args[i]);
 			  	}
 
-			message.channel.send("React to vote!")
+			/*message.channel.send("React to vote!")
 			    .then(function (message) {
 				for (let i = 0; i < numOptions; i++) {
 					message.react(emojiDict[i]);
 				}}).catch(function() {
 					message.channel.send("Lmao")
 					   });
-		}
+		*/
+		
+					}
 		else {message.channel.send(`Please format using [r$poll NumberOfOptions Option1 Option2...]`);}
 		
 	}
