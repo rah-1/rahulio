@@ -57,7 +57,7 @@ client.on('message', message => {
 
 	else if (command.startsWith(`poll`)){
 		let numOptions = parseInt(args[0]);
-		if (!isNan(numOptions) && numOptions <= 10){
+		if (!isNaN(numOptions) && numOptions <= 10){
 			message.channel.send(`Poll with ` + numOptions + `options!`);
 
 			for (let i = 0; i < numOptions; i++) {				
