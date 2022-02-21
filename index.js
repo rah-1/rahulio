@@ -57,10 +57,10 @@ client.on('message', message => {
 
 	else if (command.startsWith(`poll`)){
 		let numOptions = parseInt(args[0]);
-		if (!isNaN(numOptions) && numOptions <= 10){
-			message.channel.send(`Poll with ` + numOptions + `options!`);
+		if (!isNaN(numOptions) && numOptions <= 10 && args.length == numOptions - 1){
+			message.channel.send(`Poll with ` + numOptions + ` options!`);
 
-			for (let i = 0; i < numOptions; i++) {				
+			for (let i = 1; i <= numOptions; i++) {				
 				message.channel.send(emojiDict[i] + ` ` + args[i]);
 			  	}
 
