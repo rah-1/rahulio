@@ -9,6 +9,19 @@ const client = new Discord.Client();
 const { prefix, author, version } = require('./config.json');
 const token = process.env.token;
 
+var emojiDict = {
+	1: ":one:",
+	2: ":two:",
+	3: ":three:",
+	4: ":four:",
+	5: ":five:",
+	6: ":six:",
+	7: ":seven:",
+	8: ":eight:",
+	9: ":nine:",
+	10: ":keycap_ten:"
+  };
+
 var guildIDs = []; //arr.push(value) / arr.pop(...)
 guildIDs.push(771204228533190666);
 
@@ -41,6 +54,27 @@ client.on('message', message => {
 		message.channel.send('Unsubscribed from Zen.');
 		guildIDs.pop(args[0]);
 	}	
+
+	else if (command.startsWith(`poll`)){
+		if (typeof args[0] == "number" && args[0] <= 10){
+			const numOptions = args[0];
+			message.channel.send(`Poll with ` + numOptions + `options!`);
+
+			for (let i = 0; i < numOptions; i++) {				
+				message.channel.send(emojiDict[i] + ` ` + args[i]);
+			  	}
+				  
+			message.channel.send("React to vote!")
+			    .then(function (message) {
+				for (let i = 0; i < numOptions; i++) {
+					message.react(emojiDict[i]);
+				}}).catch(function() {
+					message.channel.send("Lmao")
+					   });
+		}
+		else {message.channel.send(`Please format using [r$poll NumberOfOptions Option1 Option2...]`);}
+		
+	}
 
 	else if (command.startsWith(`ouija`)){
 		if(args.length > 1) {
