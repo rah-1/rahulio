@@ -64,8 +64,8 @@ client.on('message', message => {
 				message.channel.send(emojiDict[i] + ` ` + args[i]);
 			  	}
 
-			message.channel.send("React to vote!")
-			    .then(async function (message) {
+			message.channel.send("Vote here!")               /// if this shit doesnt work experiment with hella if statements
+			    .then(async function (message) {                   //// try single react first tho
 				for (let i = 1; i <= numOptions; i++) {
 					await message.react(emojiDict[i]);
 				}}).catch(function() {
@@ -286,7 +286,7 @@ client.on('message', message => {
 			.setDescription('Thank you for calling the r$help command!')
 			.setThumbnail('https://imgur.com/12fKOZZ.jpg')
 			.addFields(
-				{ name: 'Popular Commands', value: 'r$carti, r$ouija, r$love, r$clap, r$server, r$test, r$coin\n'},
+				{ name: 'Popular Commands', value: 'r$carti, r$ouija, r$love, r$poll, r$server, r$test, r$coin\n'},
 			//	{ name: '\u200B', value: '\u200B' },
 			//	{ name: 'Inline field title', value: 'Some value here', inline: true },
 			//	{ name: 'Inline field title', value: 'Some value here', inline: true },
