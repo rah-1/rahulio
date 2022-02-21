@@ -56,14 +56,14 @@ client.on('message', message => {
 	}	
 
 	else if (command.startsWith(`poll`)){
-		if (typeof args[0] == "number" && args[0] <= 10){
-			const numOptions = args[0];
+		let numOptions = parseInt(args[0]);
+		if (!isNan(numOptions) && numOptions <= 10){
 			message.channel.send(`Poll with ` + numOptions + `options!`);
 
 			for (let i = 0; i < numOptions; i++) {				
 				message.channel.send(emojiDict[i] + ` ` + args[i]);
 			  	}
-				  
+
 			message.channel.send("React to vote!")
 			    .then(function (message) {
 				for (let i = 0; i < numOptions; i++) {
