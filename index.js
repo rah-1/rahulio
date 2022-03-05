@@ -78,6 +78,12 @@ client.on('message', message => {
 		
 	}
 
+	else if (command.startsWith(`clown`)){
+		channel.messages.fetch(args[0])
+  		.then(message => message.reply("working"))
+  		.catch(console.error);
+	}
+
 	else if (command.startsWith(`ouija`)){
 		if(args.length > 1) {
 			const yn = [`yes`,`no`,`maybe`,`unknown`,`unlikely`,`very likely`,`doubtful`];
