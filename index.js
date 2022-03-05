@@ -79,8 +79,8 @@ client.on('message', message => {
 	}
 
 	else if (command.startsWith(`clown`)){
-		channel.messages.fetch(args[0])
-  		.then(message => message.reply("working"))
+		message.channel.messages.fetch(args[0])
+  		.then(msg => msg.reply("working"))
   		.catch(console.error);
 	}
 
