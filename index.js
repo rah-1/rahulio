@@ -93,7 +93,7 @@ client.on('message', message => {
 			const where = [`in hell`,`up your ass and to the left`,`nowhere`,`somewhere`,`unknown`,`New York`];
 			const who = [`you`,`your mother`,`your neighbor`,`unknown`,`ion know`,`a nobody`,`not you`];
 			const how = [`no idea`,`somehow`,`raw`,`it's impossible`,`with love`,`gotta believe`];
-			if (args[0].toLowerCase() === `is` || args[0].toLowerCase() === `are` || args[0].toLowerCase() === `am` || args[0].toLowerCase() === `will` || args[0].toLowerCase() === `can` || args[0].toLowerCase() === `should`|| args[0].toLowerCase() === `would`){
+			if (args[0].toLowerCase() === `is` || args[0].toLowerCase() === `does` || args[0].toLowerCase() === `are` || args[0].toLowerCase() === `am` || args[0].toLowerCase() === `will` || args[0].toLowerCase() === `can` || args[0].toLowerCase() === `should`|| args[0].toLowerCase() === `would`){
 				if(message.content.substring(message.content.length-1) === `?`){
 					message.channel.send(`Question: ` + message.content.substring(8));	
 					message.channel.send(`Answer: ` + yn[Math.floor(Math.random() * yn.length)] + `!`);
@@ -163,7 +163,7 @@ client.on('message', message => {
 					message.channel.send(`Answer: ` + how[Math.floor(Math.random() * how.length)] + `!`);
 				}
 			}
-			else {message.channel.send(`Please begin your question with [is/are/am/will/should/would/can/what/why/when/where/who/how]!`)};
+			else {message.channel.send(`Please begin your question with [is/are/does/am/will/should/would/can/what/why/when/where/who/how]!`)};
 		}
 		else {message.channel.send(`Please ask a valid question!`)}
 	}
