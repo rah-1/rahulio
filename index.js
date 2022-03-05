@@ -80,7 +80,7 @@ client.on('message', message => {
 
 	else if (command.startsWith(`clown`)){
 		message.channel.messages.fetch(args[0])
-  		.then(msg => msg.reply(`\"` + msg.content + `\":nerd::nerd::nerd:`))
+  		.then(msg => msg.reply(`\"` + msg.content + `\" :nerd::nerd::nerd:`))
   		.catch(console.error);
 	}
 
