@@ -78,9 +78,15 @@ client.on('message', message => {
 		
 	}
 
-	else if (command.startsWith(`clown`)){
+	else if (command.startsWith(`nerd`)){
 		message.channel.messages.fetch(args[0])
   		.then(msg => msg.reply(`\"` + msg.content + `\" :nerd::nerd::nerd:`))
+  		.catch(message.channel.send(`Please format using [nerd messageID]`));
+	}
+	
+	else if (command.startsWith(`clown`)){
+		message.channel.messages.fetch(args[0])
+  		.then(msg => msg.reply(`\"` + msg.content + `\" :clown::clown::clown:`))
   		.catch(message.channel.send(`Please format using [r$clown messageID]`));
 	}
 
