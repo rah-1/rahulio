@@ -81,7 +81,7 @@ client.on('message', message => {
 	else if (command.startsWith(`nerd`)){
 		message.channel.messages.fetch(args[0])
   		.then(msg => msg.reply(`\"` + msg.content + `\" :nerd::nerd::nerd:`))
-  		.catch(message.channel.send(`Please format using [nerd messageID]`));
+  		.catch(message.channel.send(`Please format using [r$nerd messageID]`));
 	}
 	
 	else if (command.startsWith(`clown`)){
