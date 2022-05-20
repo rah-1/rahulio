@@ -67,7 +67,7 @@ client.on('message', message => {
 			message.channel.send("Vote here!")               /// if this shit doesnt work experiment with hella if statements
 			    .then(async function (message) {                   //// try single react first tho
 				for (let i = 1; i <= numOptions; i++) {
-					await message.react(emojiDict[i]);
+					message.react(emojiDict[i]);
 				}}).catch(function() {
 					message.channel.send("Lmao (this means it broke)")
 					   });
