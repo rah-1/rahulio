@@ -56,25 +56,16 @@ client.on('message', message => {
 	}	
 
 	else if (command.startsWith(`poll`)){
-		let numOptions = parseInt(args[0]);
-		if (!isNaN(numOptions) && numOptions <= 10 && numOptions == args.length - 1){
+		let numOptions = args.length;
+		if (numOptions < 2){
 			message.channel.send(`Poll with ` + numOptions + ` options!`);
 
-			for (let i = 1; i <= numOptions; i++) {				
-				message.channel.send(emojiDict[i] + ` ` + args[i]);
-			  	}
-
-			message.channel.send("Vote here!")               /// if this shit doesnt work experiment with hella if statements
-			    .then(async function (message) {                   //// try single react first tho
-				for (let i = 1; i <= numOptions; i++) {
-					message.react(emojiDict[i]);
-				}}).catch(function() {
-					message.channel.send("Lmao (this means it broke)")
-					   });
+			const mmm await message.reply({ content: 'You can react with Unicode emojis!', fetchReply: true });
+			mmm.react('😄');
 		
 		
 					}
-		else {message.channel.send(`Please format using [r$poll NumberOfOptions Option1 Option2...]`);}
+		else {message.channel.send(`Please format using [r$poll Option1 Option2...]`);}
 		
 	}
 
