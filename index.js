@@ -10,16 +10,16 @@ const { prefix, author, version } = require('./config.json');
 const token = process.env.token;
 
 var emojiDict = {
-	1: ":one:",
-	2: ":two:",
-	3: ":three:",
-	4: ":four:",
-	5: ":five:",
-	6: ":six:",
-	7: ":seven:",
-	8: ":eight:",
-	9: ":nine:",
-	10: ":keycap_ten:"
+	1: 1️⃣,
+	2: 2️⃣,
+	3: 3️⃣,
+	4: 4️⃣,
+	5: 5️⃣,
+	6: 6️⃣,
+	7: 7️⃣,
+	8: 8️⃣,
+	9: 9️⃣,
+	10: 🔟
   };
 
 var guildIDs = []; //arr.push(value) / arr.pop(...)
@@ -59,13 +59,17 @@ client.on('message', async message => {
 		let numOptions = args.length;
 		if (numOptions > 1){
 			message.channel.send(`Poll with ` + numOptions + ` options!`);
+			
+			for (let i = 0; i <= numOptions; i++) {				
+				message.channel.send(emojiDict[i] + ` ` + args[i]);
+			}
 
 			const poll = await message.reply({ content: 'Vote here!', fetchReply: true });
 			
 			try {
 				for (let i = 0; i < args.length; i++) 
 				{
-				  await poll.react(':smile:');
+				  await poll.react(emojiDict[i]);
 				} 
 			} 
 			catch (error) 
