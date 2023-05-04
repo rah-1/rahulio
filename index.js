@@ -34,7 +34,7 @@ client.login(token);
 
 
 
-client.on('message', async message => {
+client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return; 
 
 	const args = message.content.slice(prefix.length).split(" ");
@@ -56,6 +56,7 @@ client.on('message', async message => {
 	}	
 
 	else if (command.startsWith(`poll`)){
+		/*
 		let numOptions = args.length;
 		if (numOptions > 1){
 			message.channel.send(`Poll with ` + numOptions + ` options!`);
@@ -80,7 +81,8 @@ client.on('message', async message => {
 		
 					}
 		else {message.channel.send(`Please format using [r$poll Option1 Option2...]`);}
-		
+		*/
+		message.channel.send(`Feature is currently broken!`);
 	}
 
 	else if (command.startsWith(`nerd`)){
