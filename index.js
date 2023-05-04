@@ -60,7 +60,7 @@ client.on('message', message => {
 		if (numOptions < 2){
 			message.channel.send(`Poll with ` + numOptions + ` options!`);
 
-			const mmm await message.reply({ content: 'You can react with Unicode emojis!', fetchReply: true });
+			const mmm = await message.reply({ content: 'You can react with Unicode emojis!', fetchReply: true });
 			mmm.react('😄');
 		
 		
