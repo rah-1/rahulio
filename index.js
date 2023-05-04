@@ -65,7 +65,7 @@ client.on('message', async message => {
 			try {
 				for (let i = 0; i < args.length; i++) 
 				{
-				  await poll.react(emojiDict[i]);
+				  await poll.react(':smile:');
 				} 
 			} 
 			catch (error) 
