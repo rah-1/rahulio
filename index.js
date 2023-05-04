@@ -57,12 +57,22 @@ client.on('message', async message => {
 
 	else if (command.startsWith(`poll`)){
 		let numOptions = args.length;
-		if (numOptions < 2){
+		if (numOptions > 1){
 			message.channel.send(`Poll with ` + numOptions + ` options!`);
 
-			const mmm = await message.reply({ content: 'You can react with Unicode emojis!', fetchReply: true });
-			mmm.react('😄');
-		
+			const poll = await message.reply({ content: 'Vote here!', fetchReply: true });
+			
+			try {
+				for (let i = 0; i < args.length; i++) 
+				{
+				  await poll.react(emojiDict[i]);
+				} 
+			} 
+			catch (error) 
+			{
+				console.error('One of the emojis failed to react:', error);
+			}
+					
 		
 					}
 		else {message.channel.send(`Please format using [r$poll Option1 Option2...]`);}
